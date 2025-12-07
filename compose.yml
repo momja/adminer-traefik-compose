@@ -1,0 +1,15 @@
+services:
+  adminer:
+    image: adminer:5.4.1-standalone
+    container_name: adminer
+    restart: unless-stopped
+    user: root
+    networks:
+      - adminer_net
+    volumes:
+      - ${SQLITE_VOLUME}:/var/www/html/sqlite:rw
+      - ./plugins-enabled/login-password-less.php:/var/www/html/plugins-enabled/login-password-less.php
+
+networks:
+  adminer_net:
+    driver: bridge

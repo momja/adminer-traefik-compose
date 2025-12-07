@@ -1,0 +1,9 @@
+# Ignore any .env file anywhere
+**/.env
+**/.env.*
+
+# Allow the example template
+!.env.example
+
+*.db
+**/*.db
