@@ -4,6 +4,8 @@ services:
     container_name: adminer
     restart: unless-stopped
     user: root
+    ports:
+      - "3000:8000"
     networks:
       - adminer_net
     volumes:
